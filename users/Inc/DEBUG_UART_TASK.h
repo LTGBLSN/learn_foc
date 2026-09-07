@@ -1,0 +1,10 @@
+//
+// Created by PC on 2026/9/7.
+//
+
+#ifndef LEARN_FOC_DEBUG_UART_TASK_H
+#define LEARN_FOC_DEBUG_UART_TASK_H
+
+void DEBUG_UART_TASK();
+
+#endif //LEARN_FOC_DEBUG_UART_TASK_H

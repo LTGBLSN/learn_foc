@@ -1,0 +1,11 @@
+file(GLOB_RECURSE USER_APP_SOURCES CONFIGURE_DEPENDS
+        "${CMAKE_CURRENT_LIST_DIR}/Src/*.c"
+)
+
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE
+        ${USER_APP_SOURCES}
+)
+
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
+        "${CMAKE_CURRENT_LIST_DIR}/Inc"
+)
