@@ -7,12 +7,6 @@
 #include <math.h>
 #define deg_to_rad(a) (M_PI * (a) / 180)
 
-typedef struct duty
-{
-    float d_u;
-    float d_v;
-    float d_w;
-} duty_t;
 
 /**
  * @brief 极坐标系下的svpwm
@@ -36,14 +30,17 @@ duty_t svpwm(float theta, float s)
     duty.d_w = t_m * v[sector - 1][2] + t_n * v[sector % 6][2] + t_0 / 2;
     return duty;
 }
-//
-// int main()
-// {
-//     for (float phi = 0; phi < 360; phi += 10)
-//     {
-//         // 这里我设置磁矢量与转子垂直，这样转子受力最大
-//         duty_t duty = svpwm(deg_to_rad(fmodf(phi + 90, 360)), 1);
-//         printf("%f,%f,%f,\r\n", duty.d_u, duty.d_v, duty.d_w);
-//     }
-//     return 0;
-// }
+
+
+
+// demo用例
+  // int main()
+  // {
+  //     for (float phi = 0; phi < 360; phi += 10)
+  //     {
+  //         // 这里我设置磁矢量与转子垂直，这样转子受力最大
+  //         duty_t duty = svpwm(deg_to_rad(fmodf(phi + 90, 360)), 1);
+  //         printf("%f,%f,%f,\r\n", duty.d_u, duty.d_v, duty.d_w);
+  //     }
+  //     return 0;
+  // }
