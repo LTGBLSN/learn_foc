@@ -12,7 +12,7 @@ typedef struct duty
     float d_w;
 } duty_t;
 
-
-duty_t svpwm(float theta, float s);
+duty_t c_svpwm(float phi, float d, float q);
+duty_t p_svpwm(float theta, float s);
 
 #endif //LEARN_FOC_SVPWM_H

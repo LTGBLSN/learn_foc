@@ -13,13 +13,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     if(htim->Instance == htim1.Instance)                        //20KHZ   50US,电机控制
     {
-        if (HAL_GPIO_ReadPin(KEY2_GPIO_Port,KEY2_Pin) == 0)
+        if ( 0 == HAL_GPIO_ReadPin(KEY2_GPIO_Port,KEY2_Pin) )
         {
             EG2104_close();                                     //关mos
         }
         else
         {
             EG2104_open();                                      //开mos
+            // EG2104_close();
             motor_control();
         }
 
@@ -30,7 +31,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     {
         LED_TASK();
         DEBUG_UART_TASK();
-        motor_goal_set();
+        motor_dheta_goal_set();
 
     }
 }

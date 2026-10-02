@@ -14,9 +14,8 @@ void DEBUG_UART_TASK()
     if (++cnt >= 10)   // 10kHz / 10 = 1kHz
     {
         cnt = 0;
-        usart3_printf("%f,%f,%f \r\n",
-            duty.d_u,
-            duty.d_v,
-            duty.d_w);
+        usart3_printf("%f,%f \r\n",
+            compute_p_duty.d_u,
+            compute_c_duty.d_u);
     }
 }
